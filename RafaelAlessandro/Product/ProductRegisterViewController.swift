@@ -15,7 +15,7 @@ class ProductRegisterViewController: UIViewController {
     var smallImage: UIImage!
     var pickerView: UIPickerView!
     
-    var dataSource: [State] = []
+    var stateDataSource: [State] = []
     
     @IBOutlet weak var tfName: UITextField!
     @IBOutlet weak var ivPicture: UIImageView!
@@ -50,6 +50,7 @@ class ProductRegisterViewController: UIViewController {
             }
         }
         
+        loadState()
         setupPickerView()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ProductRegisterViewController.handleTap))
         ivPicture.addGestureRecognizer(tapGesture)
@@ -61,6 +62,18 @@ class ProductRegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func loadState() {
+        let fetchRequest: NSFetchRequest<State> = State.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        do {
+            stateDataSource = try context.fetch(fetchRequest)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    // State picker
     func setupPickerView() {
         pickerView = UIPickerView() //Instanciando o UIPickerView
         pickerView.backgroundColor = .white
@@ -91,7 +104,9 @@ class ProductRegisterViewController: UIViewController {
     }
     
     func done() {
-        tfStateName.text = dataSource[pickerView.selectedRow(inComponent: 0)].name
+        if stateDataSource.count > 0 {
+            tfStateName.text = stateDataSource[pickerView.selectedRow(inComponent: 0)].name
+        }
         
         cancel()
     }
@@ -139,10 +154,29 @@ class ProductRegisterViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
 
-
-    @IBAction func addState(_ sender: UIButton) {
+    
+    @IBAction func addUpdateProduct(_ sender: UIButton) {
+        if product == nil { product = Product(context: context) }
+        
+        product.name = tfName.text
+        if smallImage != nil {
+            product.picture = smallImage
+        }
+        product.state = nil
+        product.value = Double( tfValue.text! )!
+        product.isCreditCardPayment = swIsCreditCardPayment.isOn
+        
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
 }
+
+// Picture picker
 
 extension ProductRegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -165,10 +199,12 @@ extension ProductRegisterViewController: UIImagePickerControllerDelegate, UINavi
     }
 }
 
+// State picker
+
 extension ProductRegisterViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return dataSource[row].name
+        return stateDataSource[row].name
     }
 }
 
@@ -177,6 +213,6 @@ extension ProductRegisterViewController: UIPickerViewDataSource {
         return 1    //Usaremos apenas 1 coluna (component) em nosso pickerView
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dataSource.count //O total de linhas será o total de itens em nosso dataSource
+        return stateDataSource.count //O total de linhas será o total de itens em nosso dataSource
     }
 }
