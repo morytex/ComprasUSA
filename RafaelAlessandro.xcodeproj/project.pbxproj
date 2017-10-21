@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC2F0AB51F9B7D0100680227 /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F0AB41F9B7D0100680227 /* ProductTableViewController.swift */; };
 		AC2F0AB71F9B85BC00680227 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F0AB61F9B85BC00680227 /* ProductTableViewCell.swift */; };
 		AC2F0AB91F9B8F7900680227 /* UIViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2F0AB81F9B8F7900680227 /* UIViewController+CoreData.swift */; };
 		AC5432C91F9B92AB00065E28 /* ProductRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5432C81F9B92AB00065E28 /* ProductRegisterViewController.swift */; };
 		AC6AF9471F9B6AA80046127C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC6AF9451F9B6AA80046127C /* Model.xcdatamodeld */; };
+		ACC9B8421F9BC3EB0099601B /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC9B8411F9BC3EB0099601B /* ProductTableViewController.swift */; };
 		ACCB87671F9B636100A02DF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCB87661F9B636100A02DF8 /* AppDelegate.swift */; };
 		ACCB87691F9B636100A02DF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCB87681F9B636100A02DF8 /* ViewController.swift */; };
 		ACCB876C1F9B636100A02DF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACCB876A1F9B636100A02DF8 /* Main.storyboard */; };
@@ -20,11 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AC2F0AB41F9B7D0100680227 /* ProductTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductTableViewController.swift; path = Product/ProductTableViewController.swift; sourceTree = "<group>"; };
 		AC2F0AB61F9B85BC00680227 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductTableViewCell.swift; path = Product/ProductTableViewCell.swift; sourceTree = "<group>"; };
 		AC2F0AB81F9B8F7900680227 /* UIViewController+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+CoreData.swift"; path = "Extensions/UIViewController+CoreData.swift"; sourceTree = "<group>"; };
 		AC5432C81F9B92AB00065E28 /* ProductRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductRegisterViewController.swift; path = Product/ProductRegisterViewController.swift; sourceTree = "<group>"; };
 		AC6AF9461F9B6AA80046127C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		ACC9B8411F9BC3EB0099601B /* ProductTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductTableViewController.swift; path = RafaelAlessandro/Product/ProductTableViewController.swift; sourceTree = "<group>"; };
 		ACCB87631F9B636100A02DF8 /* ComprasUSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComprasUSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACCB87661F9B636100A02DF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACCB87681F9B636100A02DF8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,8 +49,9 @@
 			isa = PBXGroup;
 			children = (
 				AC6AF9451F9B6AA80046127C /* Model.xcdatamodeld */,
-				ACCB87651F9B636100A02DF8 /* RafaelAlessandro */,
 				ACCB87641F9B636100A02DF8 /* Products */,
+				ACC9B8411F9BC3EB0099601B /* ProductTableViewController.swift */,
+				ACCB87651F9B636100A02DF8 /* RafaelAlessandro */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,7 +72,6 @@
 				ACCB876D1F9B636100A02DF8 /* Assets.xcassets */,
 				ACCB876F1F9B636100A02DF8 /* LaunchScreen.storyboard */,
 				ACCB87721F9B636100A02DF8 /* Info.plist */,
-				AC2F0AB41F9B7D0100680227 /* ProductTableViewController.swift */,
 				AC2F0AB61F9B85BC00680227 /* ProductTableViewCell.swift */,
 				AC5432C81F9B92AB00065E28 /* ProductRegisterViewController.swift */,
 				AC2F0AB81F9B8F7900680227 /* UIViewController+CoreData.swift */,
@@ -152,11 +152,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACCB87691F9B636100A02DF8 /* ViewController.swift in Sources */,
-				AC2F0AB51F9B7D0100680227 /* ProductTableViewController.swift in Sources */,
 				AC2F0AB71F9B85BC00680227 /* ProductTableViewCell.swift in Sources */,
 				AC2F0AB91F9B8F7900680227 /* UIViewController+CoreData.swift in Sources */,
 				ACCB87671F9B636100A02DF8 /* AppDelegate.swift in Sources */,
 				AC5432C91F9B92AB00065E28 /* ProductRegisterViewController.swift in Sources */,
+				ACC9B8421F9BC3EB0099601B /* ProductTableViewController.swift in Sources */,
 				AC6AF9471F9B6AA80046127C /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

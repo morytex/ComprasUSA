@@ -1,5 +1,5 @@
 //
-//  ProductTableViewController.swift
+//  ProductsTableViewController.swift
 //  RafaelAlessandro
 //
 //  Created by Usuário Convidado on 21/10/17.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ProductTableViewController: UITableViewController {
+class ProductsTableViewController: UITableViewController {
     var label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 22))
     var fetchedResultController: NSFetchedResultsController<Product>!
     
@@ -28,23 +28,23 @@ class ProductTableViewController: UITableViewController {
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
+
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     // MARK: - Table view data source
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if let count = fetchedResultController.fetchedObjects?.count {
@@ -71,7 +71,7 @@ class ProductTableViewController: UITableViewController {
         //} else {
         //    cell.ivRotulo.image = nil
         //}
-        
+
         return cell
     }
     
@@ -106,7 +106,7 @@ class ProductTableViewController: UITableViewController {
 }
 
 
-extension ProductTableViewController: NSFetchedResultsControllerDelegate {
+extension ProductsTableViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
     }

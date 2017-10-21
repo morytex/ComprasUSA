@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Products Table View Controller-->
+        <!--Product Table View Controller-->
         <scene sceneID="lSC-7J-MGh">
             <objects>
-                <tableViewController id="j2O-cx-K34" customClass="ProductsTableViewController" customModule="ComprasUSA" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="j2O-cx-K34" customClass="ProductTableViewController" customModule="ComprasUSA" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" id="UKU-f7-iza">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,7 @@
                     <navigationItem key="navigationItem" id="q2R-84-An8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ydT-ho-JER">
                             <connections>
-                                <segue destination="XGG-5l-Ldt" kind="show" id="LBB-ra-4Y1"/>
+                                <segue destination="XGG-5l-Ldt" kind="show" identifier="product" id="LBB-ra-4Y1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
