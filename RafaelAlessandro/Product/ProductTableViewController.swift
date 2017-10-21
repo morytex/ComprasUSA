@@ -11,6 +11,8 @@ import CoreData
 
 class ProductsTableViewController: UITableViewController {
     
+    var product: Product!
+    
     var label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 22))
     var fetchedResultController: NSFetchedResultsController<Product>!
     
@@ -74,6 +76,22 @@ class ProductsTableViewController: UITableViewController {
         //}
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let product = fetchedResultController.object(at: indexPath)
+        context.delete(product)
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ProductRegisterViewController {
+            vc.product = product
+        }
     }
     
     func loadProdutos() {
